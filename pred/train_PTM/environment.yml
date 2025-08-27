@@ -1,0 +1,46 @@
+name: ptm-env
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+  - defaults
+dependencies:
+  # 基础系统依赖
+  - python=3.10.16
+  - pip=25.2
+  - openssl=3.0.16
+  - libgcc-ng=11.2.0
+  - libstdcxx-ng=11.2.0
+  
+  # GPU相关依赖 (如果不需要GPU可以移除)
+  - cudatoolkit=11.8.0
+  - cudnn=8.6.0
+  - nvidia-cublas-cu12=12.4.5.8
+  - nvidia-cuda-runtime-cu12=12.4.127
+  - nvidia-cudnn-cu12=9.1.0.70
+
+  # 科学计算核心
+  - numpy=1.26.4
+  - scipy=1.15.2
+  - pandas=2.2.3
+  - h5py=3.13.0
+
+  # 机器学习框架
+  - tensorflow=2.15.0
+  - tensorflow-addons=0.23.0
+  - torch=2.6.0
+
+  # 生物信息学相关
+  - biopython=1.85
+  - biotite=1.2.0
+
+  # 通过pip安装的特殊包
+  - pip:
+    - fair-esm==2.0.1
+    - scikit-learn==1.6.1
+    - imbalanced-learn==0.13.0
+    - matplotlib==3.10.3
+    - seaborn==0.13.2
+    - tqdm==4.67.1
+    - joblib==1.4.2
+    - logomaker==0.8.7  # 如果需要序列logo可视化
