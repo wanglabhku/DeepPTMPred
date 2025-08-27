@@ -56,9 +56,9 @@
 
 ### 文件结构：
 
-### Attenphos/
+### deepPTMpred/
 
-### ├── kk/
+### ├── pred/
 
 ### │   ├──ptm\_data\_esm\_features.npy   #ptm\_data数据集生成的ESM2特征权重文件
 
@@ -96,7 +96,7 @@
 
 ### │       └── results\_\*/             # 各类结果
 
-### ├── Human dataset/
+### ├── data/
 
 ### │   ├── ptm\_data.csv         # 数据集
 
@@ -109,4 +109,5 @@
 ### │   │   │   ├── esm2\_t33\_650M\_UR50D.pt
 
 ### └── README.md                      # 项目总说明
+
 
