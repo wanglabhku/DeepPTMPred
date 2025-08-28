@@ -28,7 +28,7 @@
 
 ###   如果使用GPU，就直接选择environment.yml，使用cpu的话可以删除GPU相关依赖
 
-### 
+###   
 
 ### 硬件要求：
 
@@ -38,7 +38,8 @@
 
 ###   3.磁盘：至少50GB空间（存储模型和特征）
 
-### 
+### 代码使用前准备：
+###   一些大文件（ESM2生成的特征文件，数据集），需要点此下载，并且文件也提供了已经下载完成的ESM2文件（esm），下载完成后，ESM2特征文件（ptm_data_esm_features.npy）放在目录deepPTMpred\pred下，数据集（ptm_data.csv）放在deepPTMpred\data目录下，下载的esm文件直接放进deepPTMpred下即可。
 
 ### 代码使用说明：
 
@@ -46,7 +47,7 @@
 
 
 
-### &nbsp; 如果你想使用自己的数据集去训练，那么你需要将自己的数据集放入Human dataset文件下，使用e2\_data.py生成ESM特征文件,随后使用python main.py训练（要保证数据集的标签一致）。
+### &nbsp; 如果你想使用自己的数据集去训练，那么你需要将自己的数据集放入data文件下，使用e2\_data.py生成ESM特征文件,随后使用python main.py训练（要保证数据集的标签一致）。
 
 ### &nbsp; 如果你想复现项目的话，在下载项目之后，你需要先配置环境，随后修改config.py中的路径配置，之后运行python main.py即可。
 
@@ -109,5 +110,6 @@
 ### │   │   │   ├── esm2\_t33\_650M\_UR50D.pt
 
 ### └── README.md                      # 项目总说明
+
 
 
