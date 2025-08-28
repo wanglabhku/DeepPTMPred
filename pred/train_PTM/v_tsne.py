@@ -51,9 +51,9 @@ class Config:
             raise ValueError(f"Unsupported PTM type: {ptm_type}")
  
         # 路径配置 
-        self.root_dir  = "/root/autodl-tmp/Attenphos"
-        self.esm_dir  = "/root/autodl-tmp/Attenphos/kk/train_PTM"
-        self.esm2  = "/root/autodl-tmp/Attenphos/kk"
+        self.root_dir  = "/root/autodl-tmp/deepPTMpred"
+        self.esm_dir  = "/root/autodl-tmp/deepPTMpred/pred/train_PTM"
+        self.esm2  = "/root/autodl-tmp/deepPTMpred/pred"
         self.result_dir  = os.path.join(self.esm_dir,  f"results_{self.ptm_type}_esm2_kfold")  
         self.model_dir  = os.path.join(self.esm_dir,  f"models_{self.ptm_type}_esm2_kfold")  
         self.data_dir  = os.path.join(self.root_dir,  "Human dataset")
@@ -234,16 +234,7 @@ def plot_tsne(features, labels, ptm_type, perplexity=30, n_iter=1000, random_sta
     plt.figure(figsize=(12,  10))
     palette = sns.color_palette("husl",  2)
     
-    # scatter = sns.scatterplot( 
-    #     x=tsne_results[:, 0], y=tsne_results[:, 1],
-    #     hue=labels_balanced, palette=palette,
-    #     alpha=0.7, s=50, edgecolor='w', linewidth=0.5 
-    # )
-    # scatter = sns.scatterplot(
-    #     x=tsne_results[:, 0], y=tsne_results[:, 1],
-    #     hue=labels_balanced, palette=sns.color_palette("pastel", 2),  # 使用浅色调色板
-    #     alpha=0.9, s=30, edgecolor='none'  # 减小点的大小和透明度
-    # )
+
     colors = ['#FFFF00' if label == 1 else '#800080' for label in labels_balanced]
     
     scatter = plt.scatter(
@@ -268,7 +259,7 @@ def plot_tsne(features, labels, ptm_type, perplexity=30, n_iter=1000, random_sta
     plt.grid(True, linestyle='--', alpha=0.3)
     
     # 保存图像 
-    output_dir = os.path.join("/root/autodl-tmp/Attenphos/esm2_feature/train_PTM/t-sne",  ptm_type)
+    output_dir = os.path.join("/root/autodl-tmp/deepPTMpred/pred/train_PTM/t-sne",  ptm_type)
     os.makedirs(output_dir,  exist_ok=True)
     filename = f"tsne_{ptm_type}_p{perplexity}_i{n_iter}.png"
     save_path = os.path.join(output_dir,  filename)
