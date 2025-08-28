@@ -1,10 +1,7 @@
 import os
 from typing import Dict, List
-# ==================== 配置类 ====================
-# ==================== 配置类 ====================
 class Config:
-    def __init__(self, ptm_type='phosphorylation'):
-               # 修改目标氨基酸映射
+    def __init__(self, ptm_type='phosphorylation'):   
         self.ptm_aa_map = {
             'phosphorylation': ['S', 'T'],
             'acetylation': ['K'],
@@ -31,15 +28,15 @@ class Config:
         if not self.target_aa:
             raise ValueError(f"Unsupported PTM type: {ptm_type}")
 
-        self.check_esm_validity = True  # 是否检查ESM特征有效性
-        self.filter_invalid_esm = False  # 是否过滤无效ESM样本
+        self.check_esm_validity = True  # 检查ESM特征有效性
+        self.filter_invalid_esm = False  # 过滤无效ESM样本
         # 路径配置 
-        self.root_dir  = "/root/autodl-tmp/Attenphos"
-        self.esm_dir  = "/root/autodl-tmp/Attenphos/kk/train_PTM"
-        self.esm2  = "/root/autodl-tmp/Attenphos/kk"
+        self.root_dir  = "/root/autodl-tmp/deepPTMpred"
+        self.esm_dir  = "/root/autodl-tmp/deepPTMpred/pred/train_PTM"
+        self.esm2  = "/root/autodl-tmp/deepPTMpred/pred"
         self.result_dir  = os.path.join(self.esm_dir,  f"results_{self.ptm_type}_esm2_kfold") 
         self.model_dir  = os.path.join(self.esm_dir,  f"models_{self.ptm_type}_esm2_kfold") 
-        self.data_dir  = os.path.join(self.root_dir,  "Human dataset")
+        self.data_dir  = os.path.join(self.root_dir,  "data")
         
         # ESM特征文件路径 (根据您的实际情况修改)
         self.esm_feature_path  = os.path.join(self.esm2,  "ptm_data_esm_features.npy") 
