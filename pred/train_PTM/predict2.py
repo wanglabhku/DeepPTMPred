@@ -37,9 +37,9 @@ class PredictConfig:
         self.target_aa  = ['S', 'T']
         
         # 路径配置 
-        self.root_dir  = "/root/autodl-tmp/Attenphos"
-        self.esm_dir  = os.path.join(self.root_dir,  "kk/train_PTM")
-        self.custom_esm_dir  = os.path.join(self.root_dir,  "kk/custom_esm")
+        self.root_dir  = "/root/autodl-tmp/deepPTMpred"
+        self.esm_dir  = os.path.join(self.root_dir,  "pred/train_PTM")
+        self.custom_esm_dir  = os.path.join(self.root_dir,  "pred/custom_esm")
         
         # 模型路径 
         # self.model_path  = os.path.join(self.esm_dir,  "models_phosphorylation_esm2_kfold/ptm_data_301_39_64_fold_1_best_model.h5")
@@ -522,7 +522,7 @@ if __name__ == "__main__":
     # Tau蛋白示例 
     protein_id = "P31749"
     protein_sequence = "MSDVAIVKEGWLHKRGEYIKTWRPRYFLLKNDGTFIGYKERPQDVDQREAPLNNFSVAQCQLMKTERPRPNTFIIRCLQWTTVIERTFHVETPEEREEWTTAIQTVADGLKKQEEEEMDFRSGSPSDNSGAEEMEVSLAKPKHRVTMNEFEYLKLLGKGTFGKVILVKEKATGRYYAMKILKKEVIVAKDEVAHTLTENRVLQNSRHPFLTALKYSFQTHDRLCFVMEYANGGELFFHLSRERVFSEDRARFYGAEIVSALDYLHSEKNVVYRDLKLENLMLDKDGHIKITDFGLCKEGIKDGATMKTFCGTPEYLAPEVLEDNDYGRAVDWWGLGVVMYEMMCGRLPFYNQDHEKLFELILMEEIRFPRTLGPEAKSLLSGLLKKDPKQRLGGGSEDAKEIMQHRFFAGIVWQHVYEKKLSPPFKPQVTSETDTRYFDEEFTAQMITITPPDQDDSMECVDSERRPHFPQFSYSASGTA"
-    pdb_path ="/root/autodl-tmp/AF-P31749-F1-model_v4.pdb"
+    pdb_path ="/root/autodl-tmp/deepPTMpred/data/AF-P31749-F1-model_v4.pdb"
 
             # --- 创建计算器 ---
 
