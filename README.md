@@ -5,11 +5,11 @@ DeepPTMPred is a deep learning-based framework for predicting post translational
 
 ***
 ### Key function
-Multi-type PTM prediction – supports 16 types of modifications
-Hybrid model architecture – combining Transformer and CNN
-Integration of the ESM-2 protein language model
-Incorporation of structural features – including secondary structure, solvent accessibility, etc.
-Support for imbalanced datasets
+- Multi-type PTM prediction – supports 16 types of modifications
+- Hybrid model architecture – combining Transformer and CNN
+- Integration of the ESM-2 protein language model
+- Incorporation of structural features – including secondary structure, solvent accessibility, etc.
+- Support for imbalanced datasets
 
 ***
 ### System requirements
@@ -107,11 +107,11 @@ Please download the required files before running the prediction.
 
 3. Update Configuration
    Modify the following parameters in the script as needed:
-   ptm_type
-   model_path
-   protein_id
-   protein_sequence
-   pdb_path
+   - ptm_type
+   - model_path
+   - protein_id
+   - protein_sequence
+   - pdb_path
 
 
 4. Run predictions:
@@ -120,6 +120,7 @@ Please download the required files before running the prediction.
    ```
    python predict.py 
    ```
+
 
 
 
