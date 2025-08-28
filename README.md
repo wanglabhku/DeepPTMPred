@@ -40,9 +40,12 @@
 
 ### 代码使用前准备：
 ###   一些大文件（ESM2生成的特征文件，数据集）需要单独下载，下载文件以及链接如下，下载后的存放位置也一并给出。
-### ESM2特征文件（ptm_data_esm_features.npy下载地址：https://drive.google.com/file/d/1wJgUQ861iqM3CXJJoQb6AT_jWT-2Dedi/view?usp=drive_link），放在目录deepPTMpred\pred下。
-### 数据集（ptm_data.csv下载地址：https://drive.google.com/file/d/1sBSODTVUOm3Q7wa05fFmupYiQs072nKX/view?usp=drive_link），放在deepPTMpred\data目录下。
-### esm模型文件（下载地址：https://drive.google.com/drive/folders/1KYbfh3PGRhd_s0wn-8tZcbX_uvo1xdNm?usp=drive_link），文件夹直接放在deepPTMpred下即可。
+### ESM2特征文件（ptm_data_esm_features.npy下载地址：https://drive.google.com/file/d/1wJgUQ861iqM3CXJJoQb6AT_jWT-2Dedi/view?usp=drive_link）
+### 放在目录deepPTMpred\pred下。
+### 数据集（ptm_data.csv下载地址：https://drive.google.com/file/d/1sBSODTVUOm3Q7wa05fFmupYiQs072nKX/view?usp=drive_link）
+### 放在deepPTMpred\data目录下。
+### esm模型文件（下载地址：https://drive.google.com/drive/folders/1KYbfh3PGRhd_s0wn-8tZcbX_uvo1xdNm?usp=drive_link）
+### 文件夹直接放在deepPTMpred下即可。
 
 ### 代码使用说明：
 
@@ -115,6 +118,7 @@
 ### │   │   │   ├── esm2\_t33\_650M\_UR50D.pt
 
 ### └── README.md                      # 项目总说明
+
 
 
 
