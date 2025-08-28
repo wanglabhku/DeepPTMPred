@@ -34,9 +34,9 @@ class Config:
             self.target_aa  = ['K']
         self.dataset_name  = "ptm_data"
         # 路径配置 
-        self.root_dir  = "/root/autodl-tmp/Attenphos"
-        self.esm_dir  = "/root/autodl-tmp/Attenphos/esm2_feature/train_PTM"
-        self.esm2  = "/root/autodl-tmp/Attenphos/esm2_feature"
+        self.root_dir  = "/root/autodl-tmp/deepPTMpred"
+        self.esm_dir  = "/root/autodl-tmp/deepPTMpred/pred/train_PTM"
+        self.esm2  = "/root/autodl-tmp/deepPTMpred/pred"
         self.result_dir  = os.path.join(self.esm_dir,  f"results_{self.ptm_type}_esm2_kfold")  
         self.model_dir  = os.path.join(self.esm_dir,  f"models_{self.ptm_type}_esm2_kfold")  
         self.data_dir  = os.path.join(self.root_dir,  "Human dataset")
