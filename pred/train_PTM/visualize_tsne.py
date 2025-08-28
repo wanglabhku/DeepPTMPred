@@ -55,9 +55,9 @@ class Config:
         self.check_esm_validity = True  # 是否检查ESM特征有效性
         self.filter_invalid_esm = False  # 是否过滤无效ESM样本
         # 路径配置 
-        self.root_dir  = "/root/autodl-tmp/Attenphos"
-        self.esm_dir  = "/root/autodl-tmp/Attenphos/kk/train_PTM"
-        self.esm2  = "/root/autodl-tmp/Attenphos/kk"
+        self.root_dir  = "/root/autodl-tmp/deepPTMpred"
+        self.esm_dir  = "/root/autodl-tmp/deepPTMpred/pred/train_PTM"
+        self.esm2  = "/root/autodl-tmp/deepPTMpred/pred"
         self.result_dir  = os.path.join(self.esm_dir,  f"results_{self.ptm_type}_esm2_kfold") 
         self.model_dir  = os.path.join(self.esm_dir,  f"models_{self.ptm_type}_esm2_kfold") 
         self.data_dir  = os.path.join(self.root_dir,  "Human dataset")
@@ -515,28 +515,7 @@ def plot_tsne(features, labels, ptm_type, perplexity=30, n_iter=1000, random_sta
 
     # 创建可视化 
     plt.figure(figsize=(12,  10))
-    # scatter = sns.scatterplot( 
-    #     x=tsne_results[:, 0], y=tsne_results[:, 1],
-    #     hue=balanced_labels, palette=sns.color_palette("hls",  2),
-    #     alpha=0.7, s=50, edgecolor='w', linewidth=0.5 
-    # )
-    # scatter = sns.scatterplot(
-    #     x=tsne_results[:, 0], y=tsne_results[:, 1],
-    #     hue=balanced_labels, palette=sns.color_palette("pastel", 2),  # 使用浅色调色板
-    #     alpha=0.7, s=30, edgecolor='none'  # 减小点的大小和透明度
-    # )
- 
-    # title = f't-SNE Visualization of {ptm_type.capitalize()}  PTM Sites'
-    # plt.title(title,  fontsize=16, pad=20)
-    # plt.xlabel('t-SNE  Dimension 1', fontsize=14)
-    # plt.ylabel('t-SNE  Dimension 2', fontsize=14)
- 
-    # # 设置图例 
-    # handles, _ = scatter.get_legend_handles_labels() 
-    # plt.legend(handles,  ['Negative', 'Positive'], title='PTM Label',
-    #            bbox_to_anchor=(1.05, 1), loc='upper left')
- 
-    # plt.grid(True,  linestyle='--', alpha=0.3)
+
     colors = ['#FFA500' if label == 1 else '#000080' for label in balanced_labels ]
     
     scatter = plt.scatter(
@@ -639,7 +618,7 @@ def main(ptm_type='phosphorylation'):
             )
         
     # 保存t-SNE结果
-    output_dir = "/root/autodl-tmp/Attenphos/kk/train_PTM/t-sne/phosphorylation_after"
+    output_dir = "/root/autodl-tmp/deepPTMpred/pred/train_PTM/t-sne/phosphorylation_after"
     os.makedirs(output_dir, exist_ok=True)
     np.save(os.path.join(output_dir, f"tsne_results_{ptm_type}.npy"), tsne_results)
     np.save(os.path.join(output_dir, f"tsne_labels_{ptm_type}.npy"), y_all)
