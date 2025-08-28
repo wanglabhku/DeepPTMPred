@@ -100,6 +100,8 @@
 ### ├── data/
 
 ### │   ├── ptm\_data.csv         # 数据集
+### │   ├── AF-P10636-F1-model_v4,pdb         # P10636的pdb文件
+### │   ├── AF-P31749-F1-model_v4,pdb         # P31749的pdb文件
 
 ### ├── esm/
 
@@ -110,6 +112,7 @@
 ### │   │   │   ├── esm2\_t33\_650M\_UR50D.pt
 
 ### └── README.md                      # 项目总说明
+
 
 
 
