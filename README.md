@@ -45,25 +45,23 @@ Please download the required files before running the prediction.
 ### Train
 
 1. Supported PTM types include:
-| PTM Type                  |
-|----------------------------|
-| phosphorylation            |
-| acetylation                |
-| ubiquitination             |
-| hydroxylation              |
-| gamma_carboxyglutamic_acid |
-| lys_methylation            |
-| malonylation               |
-| arg_methylation            |
-| crotonylation              |
-| succinylation              |
-| glutathionylation          |
-| sumoylation                |
-| s_nitrosylation            |
-| glutarylation              |
-| citrullination             |
-| o_linked_glycosylation     |
-| n_linked_glycosylation     |
+ - phosphorylation            
+ - acetylation                
+ - ubiquitination             
+ - hydroxylation              
+ - gamma_carboxyglutamic_acid 
+ - lys_methylation            
+ - malonylation               
+ - arg_methylation            
+ - crotonylation              
+ - succinylation              
+ - glutathionylation          
+ - sumoylation                
+ - s_nitrosylation            
+ - glutarylation              
+ - citrullination             
+ - o_linked_glycosylation     
+ - n_linked_glycosylation     
 
 
 2. Train:
@@ -89,7 +87,8 @@ Please download the required files before running the prediction.
 
 2. Generate features:
 
-   a. ESM Features: 
+   a. ESM Features:
+   
    -For single protein prediction:
    ```shell
    python e2_single_data.py
@@ -105,7 +104,7 @@ Please download the required files before running the prediction.
    Download the corresponding PDB files from AlphaFold DB and place them in deepPTMpred/data directory
 
 
-3. Update Configuration
+4. Update Configuration
    Modify the following parameters in the script as needed:
    - ptm_type
    - model_path
@@ -114,12 +113,13 @@ Please download the required files before running the prediction.
    - pdb_path
 
 
-4. Run predictions:
+5. Run predictions:
    Execute the script to generate predictions:
 
    ```
    python predict.py 
    ```
+
 
 
 
