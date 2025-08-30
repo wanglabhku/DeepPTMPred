@@ -98,7 +98,7 @@ Please download the required files before running the prediction.
    Download the corresponding PDB files from AlphaFold DB and place them in deepPTMpred/data directory
 
 
-4. Update Configuration
+3. Update Configuration
    Modify the following parameters in the script as needed:
    - ptm_type
    - model_path
@@ -106,12 +106,13 @@ Please download the required files before running the prediction.
    - pdb_path
 
 
-5. Run predictions:
+4. Run predictions:
    Execute the script to generate predictions:
 
    ```
    python predict.py 
    ```
+
 
 
 
