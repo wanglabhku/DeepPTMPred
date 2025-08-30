@@ -29,7 +29,31 @@ import torch
 import pyrosetta
 from Bio.PDB import PDBParser
 from Bio.SeqUtils import seq1
+import re
 
+def extract_protein_id_from_pdb_path(pdb_path):
+    """
+    从 AlphaFold PDB 文件路径中提取 UniProt ID
+    支持格式：AF-P12345-F1-model_v4.pdb 或 AF_Q99999_F1_model_v3.pdb
+    """
+    filename = os.path.basename(pdb_path)
+    
+    # 匹配模式1: AF-{id}-F1-model_vX.pdb
+    match = re.search(r'AF-([A-Za-z0-9]+)-F\d+-model_v\d+', filename)
+    if match:
+        return match.group(1)
+    
+    # 匹配模式2: AF_{id}_F1_model_vX.pdb
+    match = re.search(r'AF_([A-Za-z0-9]+)_F\d+_model_v\d+', filename)
+    if match:
+        return match.group(1)
+    
+    # 其他常见格式（如直接是 P12345.pdb）
+    match = re.search(r'^([A-Za-z0-9]{5,6})\.pdb$', filename)
+    if match:
+        return match.group(1)
+    
+    raise ValueError(f"无法从文件名 '{filename}' 中提取 protein_id")
 # 标准氨基酸三字母到单字母的映射
 one_letter = {
     'ALA': 'A', 'ARG': 'R', 'ASN': 'N', 'ASP': 'D', 'CYS': 'C',
@@ -544,21 +568,14 @@ class PTMPredictor:
  
 # ==================== 主程序 ====================
 if __name__ == "__main__":
-
-
-    # 初始化配置和预测器 
     config = PredictConfig()
     predictor = PTMPredictor(config)
     
-    protein_id = "P31749"
-    pdb_path =f"/root/autodl-tmp/deepPTMpred/data/AF-{protein_id}-F1-model_v4.pdb"
-    protein_sequence = extract_sequence_from_pdb(pdb_path, chain_id="A")  # 假设主链是 A
-
-
-
-    # 获取所有S/T位点
+    pdb_path = "/root/autodl-tmp/deepPTMpred/data/AF-P31749-F1-model_v4.pdb"
+    protein_id = extract_protein_id_from_pdb_path(pdb_path)
+    protein_sequence = extract_sequence_from_pdb(pdb_path, chain_id="A") #chain_id="A"就代表A链
+  
     all_st_positions = [i+1 for i, aa in enumerate(protein_sequence) if aa in ['S', 'T']]
-    
     # 运行预测 
     results_df = predictor.predict_ptm_sites(protein_id, protein_sequence, all_st_positions,pdb_path=pdb_path )
     
