@@ -76,7 +76,7 @@ Please download the required files before running the prediction.
 1. Get predictions for the tau protein:
 
    ```python
-   python predict.py
+   python case.py
    ```
 
 ***
@@ -94,12 +94,6 @@ Please download the required files before running the prediction.
    python e2_single_data.py
    ```  
 
-   -For multiple protein prediction:
-   ```shell
-   python e2_data.py 
-   ``` 
-
-
    b. Structual Features:
    Download the corresponding PDB files from AlphaFold DB and place them in deepPTMpred/data directory
 
@@ -109,7 +103,6 @@ Please download the required files before running the prediction.
    - ptm_type
    - model_path
    - protein_id
-   - protein_sequence
    - pdb_path
 
 
@@ -119,6 +112,7 @@ Please download the required files before running the prediction.
    ```
    python predict.py 
    ```
+
 
 
 
