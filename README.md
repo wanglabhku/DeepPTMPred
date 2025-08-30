@@ -103,25 +103,25 @@ Before running the prediction, you need to configure the following key parameter
 
     -ptm_type
    
-   Specify the type of post-translational modification (PTM) to predict.Supported types include: 'phosphorylation', 'acetylation', 'ubiquitination', etc.
+     Specify the type of post-translational modification (PTM) to predict.Supported types include: 'phosphorylation', 'acetylation', 'ubiquitination', etc.
    
-   Example: ptm_type = 'phosphorylation'
+     Example: ptm_type = 'phosphorylation'
 
    -model_path
 
-    Path to the trained model weights file (.h5 ).
+      Path to the trained model weights file (.h5 ).
 
-    Make sure the model corresponds to the selected ptm_type.
+      Make sure the model corresponds to the selected ptm_type.
 
-    Example: model_path = "./deepPTMpred/pred/train_PTM/models_phosphorylation_esm2/ptm_data_201_39_64_best_model.h5"
-   
+      Example: model_path = "./deepPTMpred/pred/train_PTM/models_phosphorylation_esm2/ptm_data_201_39_64_best_model.h5"
+    
    -pdb_path:
    
-    File path to the input PDB structure. The script will automatically extract the protein sequence and structural features (e.g., SASA, secondary structure, plDDT) from this file.
+      File path to the input PDB structure. The script will automatically extract the protein sequence and structural features (e.g., SASA, secondary structure, plDDT) from this file.
    
-    Supported formats: AlphaFold-style PDB files (e.g., AF-P31749-F1-model_v4.pdb).
+      Supported formats: AlphaFold-style PDB files (e.g., AF-P31749-F1-model_v4.pdb).
 
-    Example: pdb_path = "./deepPTMpred/data/AF-P31749-F1-model_v4.pdb"
+      Example: pdb_path = "./deepPTMpred/data/AF-P31749-F1-model_v4.pdb"
 
 
 5. Run predictions:
@@ -130,6 +130,7 @@ Before running the prediction, you need to configure the following key parameter
    ```
    python predict.py 
    ```
+
 
 
 
