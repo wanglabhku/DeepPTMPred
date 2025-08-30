@@ -28,8 +28,49 @@ import json
 import torch
 import pyrosetta
 from Bio.PDB import PDBParser
+from Bio.SeqUtils import seq1
 
-
+# 标准氨基酸三字母到单字母的映射
+one_letter = {
+    'ALA': 'A', 'ARG': 'R', 'ASN': 'N', 'ASP': 'D', 'CYS': 'C',
+    'GLN': 'Q', 'GLU': 'E', 'GLY': 'G', 'HIS': 'H', 'ILE': 'I',
+    'LEU': 'L', 'LYS': 'K', 'MET': 'M', 'PHE': 'F', 'PRO': 'P',
+    'SER': 'S', 'THR': 'T', 'TRP': 'W', 'TYR': 'Y', 'VAL': 'V',
+    'SEC': 'U', 'PYL': 'O', 'ASX': 'B', 'GLX': 'Z', 'XAA': 'X', 'XLE': 'J'
+}
+def extract_sequence_from_pdb(pdb_path, chain_id=None):
+    """
+    从 PDB 文件中提取氨基酸序列
+    :param pdb_path: PDB 文件路径
+    :param chain_id: 指定链 ID（如 'A'），若为 None 则合并所有链
+    :return: 氨基酸序列（字符串）
+    """
+    parser = PDBParser(QUIET=True)
+    structure = parser.get_structure("protein", pdb_path)
+    
+    sequences = {}
+    
+    for model in structure:
+        for chain in model:
+            chain_id = chain.id
+            seq = []
+            for residue in chain:
+                if residue.get_id()[0] != " ":
+                    continue
+                resname = residue.get_resname()
+                try:
+                    seq.append(one_letter[resname])
+                except KeyError:
+                    # 对于未知残基，用 'X' 表示
+                    seq.append('X')
+            sequences[chain_id] = ''.join(seq)
+    
+    # 如果只想要一条链
+    if chain_id is not None:
+        return sequences.get(chain_id, "")
+    
+    # 否则返回所有链的序列（用 '/' 分隔）
+    return '/'.join([f"{k}:{v}" for k, v in sequences.items()])
 # ==================== 配置类 (优化版) ====================
 class PredictConfig:
     def __init__(self):
@@ -37,26 +78,16 @@ class PredictConfig:
         self.target_aa  = ['S', 'T']
         
         # 路径配置 
-        self.root_dir  = "/root/autodl-tmp/deepPTMpred"
-        self.esm_dir  = os.path.join(self.root_dir,  "pred/train_PTM")
-        self.custom_esm_dir  = os.path.join(self.root_dir,  "pred/custom_esm")
+        self.root_dir  = "/root/autodl-tmp/Attenphos"
+        self.esm_dir  = os.path.join(self.root_dir,  "kk/train_PTM")
+        self.custom_esm_dir  = os.path.join(self.root_dir,  "kk/custom_esm")
         
         # 模型路径 
-        # self.model_path  = os.path.join(self.esm_dir,  "models_phosphorylation_esm2_kfold/ptm_data_301_39_64_fold_1_best_model.h5")
-        # self.model_path  = os.path.join(self.esm_dir,  "models_phosphorylation_esm2/ptm_data_201_39_64_best_model.h5")    #0
-        self.model_path  = os.path.join(self.esm_dir,  "models_phosphorylation_esm2/ptm_data_210_39_64_best_model.h5")  #1
-        # self.model_path  = os.path.join(self.esm_dir,  "models_phosphorylation_esm2/ptm_data3_403_29_64_best_model.h5") 
+        self.model_path  = os.path.join(self.esm_dir,  "models_phosphorylation_esm2/ptm_data_201_39_64_best_model.h5")
 
-        # self.model_path  = os.path.join(self.esm_dir,  "models_phosphorylation_esm2_kfold/ptm_data_301_39_64_fold_4_best_model.h5")  #2
-
-        # ESM特征维度
         self.esm_dim  = 1280
-        
-        # 结构特征优化参数 
         self.struct_features  = ['sasa', 'phi', 'psi', 'secstruct','local_plDDT', 'avg_plDDT']
         self.struct_feature_dim  = 8
-        
-        # 模型参数
         self.embed_dim  = 64 
         self.num_heads  = 4
         self.ff_dim  = 256
@@ -519,12 +550,10 @@ if __name__ == "__main__":
     config = PredictConfig()
     predictor = PTMPredictor(config)
     
-    # Tau蛋白示例 
     protein_id = "P31749"
-    protein_sequence = "MSDVAIVKEGWLHKRGEYIKTWRPRYFLLKNDGTFIGYKERPQDVDQREAPLNNFSVAQCQLMKTERPRPNTFIIRCLQWTTVIERTFHVETPEEREEWTTAIQTVADGLKKQEEEEMDFRSGSPSDNSGAEEMEVSLAKPKHRVTMNEFEYLKLLGKGTFGKVILVKEKATGRYYAMKILKKEVIVAKDEVAHTLTENRVLQNSRHPFLTALKYSFQTHDRLCFVMEYANGGELFFHLSRERVFSEDRARFYGAEIVSALDYLHSEKNVVYRDLKLENLMLDKDGHIKITDFGLCKEGIKDGATMKTFCGTPEYLAPEVLEDNDYGRAVDWWGLGVVMYEMMCGRLPFYNQDHEKLFELILMEEIRFPRTLGPEAKSLLSGLLKKDPKQRLGGGSEDAKEIMQHRFFAGIVWQHVYEKKLSPPFKPQVTSETDTRYFDEEFTAQMITITPPDQDDSMECVDSERRPHFPQFSYSASGTA"
-    pdb_path ="/root/autodl-tmp/deepPTMpred/data/AF-P31749-F1-model_v4.pdb"
+    pdb_path =f"/root/autodl-tmp/deepPTMpred/data/AF-{protein_id}-F1-model_v4.pdb"
+    protein_sequence = extract_sequence_from_pdb(pdb_path, chain_id="A")  # 假设主链是 A
 
-            # --- 创建计算器 ---
 
 
     # 获取所有S/T位点
@@ -534,7 +563,7 @@ if __name__ == "__main__":
     results_df = predictor.predict_ptm_sites(protein_id, protein_sequence, all_st_positions,pdb_path=pdb_path )
     
     # 保存结果 
-    output_path = os.path.join(config.esm_dir, f"{protein_id}_all_phospho_predictions3.csv") 
+    output_path = os.path.join(config.root_dir, f"{protein_id}_all_phospho_predictions34.csv") 
     results_df.to_csv(output_path, index=False)
     
     # 打印结果摘要
@@ -542,7 +571,7 @@ if __name__ == "__main__":
     print(f"总S/T位点数: {len(results_df)}")
     print(f"\n完整结果已保存至: {output_path}")
     
-    sites_of_interest = [129,308,473]  # 关注的位点预测概率显示
+    sites_of_interest = [202, 205, 231, 262, 356]  # 关注的位点预测概率显示
     print("\n=== 关注的位点预测概率 ===")
     for pos in sites_of_interest:
         site_data = results_df[results_df['position'] == pos]
