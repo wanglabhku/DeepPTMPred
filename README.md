@@ -83,7 +83,7 @@ Please download the required files before running the prediction.
 
 ### Predict
 
-1. Download the model checkpoint files from [model checkpoint](https://drive.google.com/drive/folders/1KYbfh3PGRhd_s0wn-8tZcbX_uvo1xdNm?usp=drive_link) and place in the /deepPTMpred directory .
+1. Download the ESM model checkpoint files from [model checkpoint](https://drive.google.com/drive/folders/1KYbfh3PGRhd_s0wn-8tZcbX_uvo1xdNm?usp=drive_link) and place in the /deepPTMpred directory .
 
 2. Generate features:
 
@@ -112,6 +112,7 @@ Please download the required files before running the prediction.
    ```
    python predict.py 
    ```
+
 
 
 
