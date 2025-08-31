@@ -1,7 +1,7 @@
 # DeepPTMPred
 
 DeepPTMPred is a deep learning-based framework for predicting post translational modifications sites, capable of identifying various modification types, including phosphorylation, acetylation, ubiquitination, and etc. 
- <img title="" src="./model.png" alt="Alternative text" width="637">
+ <img title="" src="./model.png" alt="Alternative text" width="800">
 
 
 ***
@@ -90,7 +90,6 @@ Please download the required files before running the prediction.
 
    a. ESM Features:
    
-   -For single protein prediction:
    ```shell
    python e2_single_data.py
    ```  
@@ -139,6 +138,7 @@ Before running the prediction, you need to configure the following key parameter
    ```
    python predict.py 
    ```
+
 
 
 
