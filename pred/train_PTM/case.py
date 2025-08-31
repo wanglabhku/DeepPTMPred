@@ -37,7 +37,7 @@ class PredictConfig:
         self.target_aa  = ['S', 'T']
         
         # 路径配置 
-        self.root_dir  = "/root/autodl-tmp/deepPTMpred"
+        self.root_dir  = "/root/autodl-tmp/DeepPTMPred"
         self.esm_dir  = os.path.join(self.root_dir,  "pred/train_PTM")
         self.custom_esm_dir  = os.path.join(self.root_dir,  "pred/custom_esm")
         
