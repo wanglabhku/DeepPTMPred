@@ -95,10 +95,11 @@ Please download the required files before running the prediction.
    ```  
 
    b. Structual Features:
+   
    Download the corresponding PDB files from AlphaFold DB and place them in deepPTMpred/data directory
 
 
-3. Update Configuration
+4. Update Configuration
 Before running the prediction, you need to configure the following key parameters in predict.py:
 
     -ptm_type
@@ -130,6 +131,7 @@ Before running the prediction, you need to configure the following key parameter
    ```
    python predict.py 
    ```
+
 
 
 
