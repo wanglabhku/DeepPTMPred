@@ -1,0 +1,12 @@
+===  glutarylation  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.7185
+Precision: 0.6158
+Recall: 0.5708
+F1: 0.5899
+MCC: 0.3790
+AUC: 0.7694
+AUPR: 0.6582
+FP Rate: 0.1995
+FN Rate: 0.4292

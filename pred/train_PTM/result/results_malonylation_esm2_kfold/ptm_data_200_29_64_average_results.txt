@@ -1,0 +1,12 @@
+===  malonylation  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.8256
+Precision: 0.7116
+Recall: 0.8628
+F1: 0.7798
+MCC: 0.6459
+AUC: 0.9165
+AUPR: 0.8757
+FP Rate: 0.1952
+FN Rate: 0.1372

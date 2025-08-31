@@ -1,0 +1,12 @@
+===  glutathionylation  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.7932
+Precision: 0.7140
+Recall: 0.7956
+F1: 0.7522
+MCC: 0.5788
+AUC: 0.8747
+AUPR: 0.8130
+FP Rate: 0.2083
+FN Rate: 0.2044

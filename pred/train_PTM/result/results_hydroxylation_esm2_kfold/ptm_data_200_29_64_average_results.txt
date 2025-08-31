@@ -1,0 +1,12 @@
+===  hydroxylation  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.9004
+Precision: 0.8349
+Recall: 0.9275
+F1: 0.8768
+MCC: 0.7997
+AUC: 0.9651
+AUPR: 0.9492
+FP Rate: 0.1163
+FN Rate: 0.0725

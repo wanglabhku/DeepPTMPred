@@ -1,0 +1,12 @@
+===  lys_methylation  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.8095
+Precision: 0.7026
+Recall: 0.8315
+F1: 0.7615
+MCC: 0.6109
+AUC: 0.8990
+AUPR: 0.8656
+FP Rate: 0.2032
+FN Rate: 0.1685
