@@ -1,0 +1,12 @@
+===  succinylation  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.7740
+Precision: 0.7877
+Recall: 0.7489
+F1: 0.7672
+MCC: 0.5492
+AUC: 0.8590
+AUPR: 0.8496
+FP Rate: 0.2011
+FN Rate: 0.2511

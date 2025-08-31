@@ -1,0 +1,12 @@
+===  sumoylation  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.8089
+Precision: 0.4814
+Recall: 0.8110
+F1: 0.6040
+MCC: 0.5178
+AUC: 0.8879
+AUPR: 0.7226
+FP Rate: 0.1915
+FN Rate: 0.1890

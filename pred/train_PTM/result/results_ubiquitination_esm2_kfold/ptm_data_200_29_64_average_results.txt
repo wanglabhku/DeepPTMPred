@@ -1,0 +1,12 @@
+===  ubiquitination  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.7758
+Precision: 0.8440
+Recall: 0.7567
+F1: 0.7975
+MCC: 0.5526
+AUC: 0.8646
+AUPR: 0.8900
+FP Rate: 0.1974
+FN Rate: 0.2433

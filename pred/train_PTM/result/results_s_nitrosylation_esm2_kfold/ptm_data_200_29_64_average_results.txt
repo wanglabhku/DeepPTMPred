@@ -1,0 +1,12 @@
+===  s_nitrosylation  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.7667
+Precision: 0.7100
+Recall: 0.7198
+F1: 0.7143
+MCC: 0.5179
+AUC: 0.8461
+AUPR: 0.7882
+FP Rate: 0.2014
+FN Rate: 0.2802

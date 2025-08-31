@@ -1,0 +1,12 @@
+===  o_linked_glycosylation  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.8140
+Precision: 0.2415
+Recall: 0.8502
+F1: 0.3760
+MCC: 0.3889
+AUC: 0.9100
+AUPR: 0.6383
+FP Rate: 0.1886
+FN Rate: 0.1498
