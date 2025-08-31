@@ -5,7 +5,7 @@ DeepPTMPred is a deep learning-based framework for predicting post translational
 
 
 ***
-### Key function
+### Key Function
 - Multi-type PTM prediction – supports 16 types of modifications
 - Hybrid model architecture – combining Transformer and CNN
 - Integration of the ESM-2 protein language model
@@ -13,7 +13,7 @@ DeepPTMPred is a deep learning-based framework for predicting post translational
 - Support for imbalanced datasets
 
 ***
-### System requirements
+### System Requirements
 GPU: NVIDIA CUDA 11.8+ (recommended) Memory: 16 GB+ Storage: At least 50 GB of free disk space
 
 ***
@@ -103,35 +103,42 @@ Please download the required files before running the prediction.
 4. Update Configuration
 Before running the prediction, you need to configure the following key parameters in predict.py:
 
-    -ptm_type
+    - ptm_type
    
      Specify the type of post-translational modification (PTM) to predict.Supported types include: 'phosphorylation', 'acetylation', 'ubiquitination', etc.
    
+      ```shell
      Example: ptm_type = 'phosphorylation'
+      ``` 
 
-   -model_path
+   - model_path
 
       Path to the trained model weights file (.h5 ).
 
-      Make sure the model corresponds to the selected ptm_type.
-
+      Make sure use the model corresponds to the selected ptm_type.
+     
+      ```shell
       Example: model_path = "./deepPTMpred/pred/train_PTM/models_phosphorylation_esm2/ptm_data_201_39_64_best_model.h5"
+      ``` 
     
-   -pdb_path:
+   - pdb_path:
    
       File path to the input PDB structure. The script will automatically extract the protein sequence and structural features (e.g., SASA, secondary structure, plDDT) from this file.
    
       Supported formats: AlphaFold-style PDB files (e.g., AF-P31749-F1-model_v4.pdb).
-
+     
+      ```shell
       Example: pdb_path = "./deepPTMpred/data/AF-P31749-F1-model_v4.pdb"
+      ``` 
 
 
-5. Run predictions:
+6. Run predictions:
    Execute the script to generate predictions:
 
    ```
    python predict.py 
    ```
+
 
 
 
