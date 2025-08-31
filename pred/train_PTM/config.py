@@ -34,8 +34,8 @@ class Config:
         self.root_dir  = "/root/autodl-tmp/DeepPTMPred"
         self.esm_dir  = "/root/autodl-tmp/DeepPTMPred/pred/train_PTM"
         self.esm2  = "/root/autodl-tmp/DeepPTMPred/pred"
-        self.result_dir  = os.path.join(self.esm_dir,  f"results_{self.ptm_type}_esm2_kfold") 
-        self.model_dir  = os.path.join(self.esm_dir,  f"models_{self.ptm_type}_esm2_kfold") 
+        self.result_dir  = os.path.join(self.esm_dir, "result" , f"results_{self.ptm_type}_esm2_kfold") 
+        self.model_dir  = os.path.join(self.esm_dir,  "model"  , f"models_{self.ptm_type}_esm2_kfold") 
         self.data_dir  = os.path.join(self.root_dir,  "data")
         
         # ESM特征文件路径 (根据您的实际情况修改)
