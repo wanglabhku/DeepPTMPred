@@ -102,7 +102,7 @@ class PredictConfig:
         self.target_aa  = ['S', 'T']
         
         # 路径配置 
-        self.root_dir  = "/root/autodl-tmp/deepPTMpred"
+        self.root_dir  = "/root/autodl-tmp/DeepPTMPred"
         self.esm_dir  = os.path.join(self.root_dir,  "pred/train_PTM")
         self.custom_esm_dir  = os.path.join(self.root_dir,  "pred/custom_esm")
         
@@ -571,7 +571,7 @@ if __name__ == "__main__":
     config = PredictConfig()
     predictor = PTMPredictor(config)
     
-    pdb_path = "/root/autodl-tmp/deepPTMpred/data/AF-P31749-F1-model_v4.pdb"
+    pdb_path = "/root/autodl-tmp/DeepPTMPred/data/AF-P31749-F1-model_v4.pdb"
     protein_id = extract_protein_id_from_pdb_path(pdb_path)
     protein_sequence = extract_sequence_from_pdb(pdb_path, chain_id="A") #chain_id="A"就代表A链
   
