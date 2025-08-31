@@ -105,10 +105,10 @@ Before running the prediction, you need to configure the following key parameter
 
     - ptm_type
    
-     Specify the type of post-translational modification (PTM) to predict.Supported types include: 'phosphorylation', 'acetylation', 'ubiquitination', etc.
+      Specify the type of post-translational modification (PTM) to predict.Supported types include: 'phosphorylation', 'acetylation', 'ubiquitination', etc.
    
       ```shell
-     Example: ptm_type = 'phosphorylation'
+      Example: ptm_type = 'phosphorylation'
       ``` 
 
    - model_path
@@ -138,6 +138,7 @@ Before running the prediction, you need to configure the following key parameter
    ```
    python predict.py 
    ```
+
 
 
 
