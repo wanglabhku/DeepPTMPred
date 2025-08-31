@@ -1,0 +1,12 @@
+===  gamma_carboxyglutamic_acid  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.8430
+Precision: 0.8770
+Recall: 0.7975
+F1: 0.8284
+MCC: 0.6959
+AUC: 0.9060
+AUPR: 0.9168
+FP Rate: 0.1125
+FN Rate: 0.2025

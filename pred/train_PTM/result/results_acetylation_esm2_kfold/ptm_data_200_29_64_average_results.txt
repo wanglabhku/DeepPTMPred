@@ -1,0 +1,12 @@
+===  acetylation  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.7801
+Precision: 0.9318
+Recall: 0.7738
+F1: 0.8451
+MCC: 0.5022
+AUC: 0.8725
+AUPR: 0.9565
+FP Rate: 0.1978
+FN Rate: 0.2262

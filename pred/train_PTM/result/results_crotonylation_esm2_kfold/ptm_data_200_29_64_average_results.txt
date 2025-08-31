@@ -1,0 +1,12 @@
+===  crotonylation  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.5405
+Precision: 0.7589
+Recall: 0.4910
+F1: 0.5437
+MCC: 0.1952
+AUC: 0.7799
+AUPR: 0.9424
+FP Rate: 0.2500
+FN Rate: 0.5090

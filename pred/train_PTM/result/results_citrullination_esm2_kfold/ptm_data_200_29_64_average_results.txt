@@ -1,0 +1,12 @@
+===  citrullination  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.8277
+Precision: 0.2048
+Recall: 0.5400
+F1: 0.2878
+MCC: 0.2538
+AUC: 0.7784
+AUPR: 0.3900
+FP Rate: 0.1533
+FN Rate: 0.4600

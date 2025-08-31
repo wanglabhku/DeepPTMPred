@@ -1,0 +1,22 @@
+===  acetylation  PTM预测结果 (第1折) ===
+
+===  性能指标 ===
+Accuracy:  0.7850
+Precision:  0.9175
+Recall:  0.7948
+F1:  0.8517
+MCC:  0.4841
+AUC:  0.8639
+AUPR:  0.9546
+FP Rate: 0.2492
+FN Rate: 0.2052
+
+===  分类报告 ===
+              precision    recall  f1-score   support
+
+    Negative       0.51      0.75      0.61       309
+    Positive       0.92      0.79      0.85      1077
+
+    accuracy                           0.78      1386
+   macro avg       0.71      0.77      0.73      1386
+weighted avg       0.83      0.78      0.80      1386

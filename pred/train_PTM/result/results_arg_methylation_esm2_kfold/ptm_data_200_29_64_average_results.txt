@@ -1,0 +1,12 @@
+===  arg_methylation  PTM预测模型 10 折交叉验证平均结果 ===
+
+===  平均性能指标 ===
+Accuracy: 0.8102
+Precision: 0.5448
+Recall: 0.8407
+F1: 0.6608
+MCC: 0.5621
+AUC: 0.9092
+AUPR: 0.8201
+FP Rate: 0.1984
+FN Rate: 0.1593

@@ -1,0 +1,48 @@
+{
+    "Confusion Matrix": [
+        [
+            14,
+            2
+        ],
+        [
+            6,
+            10
+        ]
+    ],
+    "Accuracy": 0.75,
+    "Precision": 0.8333333333333334,
+    "Recall": 0.625,
+    "F1": 0.7142857142857143,
+    "MCC": 0.5163977794943222,
+    "AUC": 0.87109375,
+    "AUPR": 0.7935614969825496,
+    "FP Rate": 0.125,
+    "FN Rate": 0.375,
+    "Class Report": {
+        "0": {
+            "precision": 0.7,
+            "recall": 0.875,
+            "f1-score": 0.7777777777777778,
+            "support": 16.0
+        },
+        "1": {
+            "precision": 0.8333333333333334,
+            "recall": 0.625,
+            "f1-score": 0.7142857142857143,
+            "support": 16.0
+        },
+        "accuracy": 0.75,
+        "macro avg": {
+            "precision": 0.7666666666666666,
+            "recall": 0.75,
+            "f1-score": 0.746031746031746,
+            "support": 32.0
+        },
+        "weighted avg": {
+            "precision": 0.7666666666666666,
+            "recall": 0.75,
+            "f1-score": 0.746031746031746,
+            "support": 32.0
+        }
+    }
+}
