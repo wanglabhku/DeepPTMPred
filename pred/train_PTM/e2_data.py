@@ -8,7 +8,7 @@ import traceback
 from tqdm import tqdm
 
 # 配置
-custom_cache_path = "/root/autodl-tmp/deepPTMpred/esm"
+custom_cache_path = "/root/autodl-tmp/DeepPTMPred/esm"
 os.environ["TORCH_HOME"] = custom_cache_path
 os.makedirs(custom_cache_path, exist_ok=True)
 def strict_sequence_processing(sequence, position, alphabet, max_len=1022):
@@ -237,9 +237,9 @@ def extract_esm_features(sequences, alphabet, output_path, batch_size=64, resume
 
 if __name__ == "__main__":
     # 输入输出路径
-    input_csv = "/root/autodl-tmp/deepPTMpred/data/ptm_data.csv"
-    output_feature = "/root/autodl-tmp/deepPTMpred/pred/ptm_data_esm_features.npy"
-    output_metadata = "/root/autodl-tmp/deepPTMpred/pred/ptm_data_metadata.npz"
+    input_csv = "/root/autodl-tmp/DeepPTMPred/data/ptm_data.csv"
+    output_feature = "/root/autodl-tmp/DeepPTMPred/pred/ptm_data_esm_features.npy"
+    output_metadata = "/root/autodl-tmp/DeepPTMPred/pred/ptm_data_metadata.npz"
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--resume", action="store_true", help="继续未完成的处理")
