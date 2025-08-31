@@ -133,11 +133,13 @@ Before running the prediction, you need to configure the following key parameter
 
 
 6. Run predictions:
+   
    Execute the script to generate predictions:
 
    ```
    python predict.py 
    ```
+
 
 
 
