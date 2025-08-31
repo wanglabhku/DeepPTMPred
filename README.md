@@ -86,7 +86,7 @@ Please download the required files before running the prediction.
 
 1. Download the ESM model checkpoint files from [esm model](https://drive.google.com/drive/folders/1KYbfh3PGRhd_s0wn-8tZcbX_uvo1xdNm?usp=drive_link) and place in the /deepPTMpred directory .
 
-2. Generate features:
+2. Data Preparation:
 
    a. ESM Features:
    
@@ -139,6 +139,7 @@ Before running the prediction, you need to configure the following key parameter
    ```
    python predict.py 
    ```
+
 
 
 
