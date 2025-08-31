@@ -107,7 +107,7 @@ class PredictConfig:
         self.custom_esm_dir  = os.path.join(self.root_dir,  "pred/custom_esm")
         
         # 模型路径 
-        self.model_path  = os.path.join(self.esm_dir,  "model/models_phosphorylation_esm2/ptm_data_201_39_64_best_model.h5")
+        self.model_path  = os.path.join(self.esm_dir,  "model/models_phosphorylation_esm2/ptm_data_210_39_64_best_model.h5")
 
         self.esm_dim  = 1280
         self.struct_features  = ['sasa', 'phi', 'psi', 'secstruct','local_plDDT', 'avg_plDDT']
