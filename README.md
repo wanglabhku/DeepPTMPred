@@ -1,6 +1,7 @@
 # DeepPTMPred
 
 DeepPTMPred is a deep learning-based framework for predicting post translational modifications sites, capable of identifying various modification types, including phosphorylation, acetylation, ubiquitination, and etc. 
+ <img title="" src="./model.png" alt="Alternative text" width="637">
 
 
 ***
@@ -131,6 +132,7 @@ Before running the prediction, you need to configure the following key parameter
    ```
    python predict.py 
    ```
+
 
 
 
