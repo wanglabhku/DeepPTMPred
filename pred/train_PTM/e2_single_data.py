@@ -7,16 +7,16 @@ from tqdm import tqdm
 
 # 配置
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-custom_checkpoint_path = "/root/autodl-tmp/deepPTMpred/esm/hub/checkpoints/esm2_t33_650M_UR50D.pt"
-os.makedirs("/root/autodl-tmp/deepPTMpred/esm", exist_ok=True)
-os.environ["TORCH_HOME"] = "/root/autodl-tmp/deepPTMpred/esm"
+custom_checkpoint_path = "/root/autodl-tmp/DeepPTMPred/esm/hub/checkpoints/esm2_t33_650M_UR50D.pt"
+os.makedirs("/root/autodl-tmp/DeepPTMPred/esm", exist_ok=True)
+os.environ["TORCH_HOME"] = "/root/autodl-tmp/DeepPTMPred/esm"
 
 def extract_full_sequence_esm(protein_id, sequence, output_dir="."):
     """
     提取整个蛋白质序列的ESM特征
     """
     # 定义模型路径
-    custom_checkpoint_path = "/root/autodl-tmp/deepPTMpred/esm/hub/checkpoints/esm2_t33_650M_UR50D.pt"
+    custom_checkpoint_path = "/root/autodl-tmp/DeepPTMPred/esm/hub/checkpoints/esm2_t33_650M_UR50D.pt"
 
     # 使用 safe_globals 安全加载模型
     with torch.serialization.safe_globals([argparse.Namespace]):
@@ -76,5 +76,5 @@ if __name__ == "__main__":
     extract_full_sequence_esm(
         protein_id=protein_id,
         sequence=protein_sequence,
-        output_dir="/root/autodl-tmp/deepPTMpred/pred/custom_esm"
+        output_dir="/root/autodl-tmp/DeepPTMPred/pred/custom_esm"
     )
