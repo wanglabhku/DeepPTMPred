@@ -118,7 +118,7 @@ Before running the prediction, you need to configure the following key parameter
       Make sure use the model corresponds to the selected ptm_type.
      
       ```shell
-      Example: model_path = "./deepPTMpred/pred/train_PTM/models_phosphorylation_esm2/ptm_data_201_39_64_best_model.h5"
+      Example: model_path = "./deepPTMpred/pred/train_PTM/model/models_phosphorylation_esm2/ptm_data_210_39_64_best_model.h5"
       ``` 
     
    - pdb_path:
@@ -139,6 +139,7 @@ Before running the prediction, you need to configure the following key parameter
    ```
    python predict.py 
    ```
+
 
 
 
