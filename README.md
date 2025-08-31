@@ -39,7 +39,7 @@ Please download the required files before running the prediction.
 | ------------------------------------------------------------------------------------------------------------- | ------------------- |
 | [ptm_data.csv](https://drive.google.com/file/d/1sBSODTVUOm3Q7wa05fFmupYiQs072nKX/view?usp=drive_link)         | deepPTMpred/data    |
 | [ptm_data_esm_features.npy](https://drive.google.com/file/d/1wJgUQ861iqM3CXJJoQb6AT_jWT-2Dedi/view?usp=drive_link) | deepPTMpred/pred    |
-| [model checkpoint](https://drive.google.com/drive/folders/1KYbfh3PGRhd_s0wn-8tZcbX_uvo1xdNm?usp=drive_link)   | deepPTMpred         |
+| [esm model](https://drive.google.com/drive/folders/1KYbfh3PGRhd_s0wn-8tZcbX_uvo1xdNm?usp=drive_link)   | deepPTMpred         |
 
 
 ***
@@ -138,6 +138,7 @@ Before running the prediction, you need to configure the following key parameter
    ```
    python predict.py 
    ```
+
 
 
 
