@@ -31,9 +31,9 @@ class Config:
         self.check_esm_validity = True  # 检查ESM特征有效性
         self.filter_invalid_esm = False  # 过滤无效ESM样本
         # 路径配置 
-        self.root_dir  = "/root/autodl-tmp/deepPTMpred"
-        self.esm_dir  = "/root/autodl-tmp/deepPTMpred/pred/train_PTM"
-        self.esm2  = "/root/autodl-tmp/deepPTMpred/pred"
+        self.root_dir  = "/root/autodl-tmp/DeepPTMPred"
+        self.esm_dir  = "/root/autodl-tmp/DeepPTMPred/pred/train_PTM"
+        self.esm2  = "/root/autodl-tmp/DeepPTMPred/pred"
         self.result_dir  = os.path.join(self.esm_dir,  f"results_{self.ptm_type}_esm2_kfold") 
         self.model_dir  = os.path.join(self.esm_dir,  f"models_{self.ptm_type}_esm2_kfold") 
         self.data_dir  = os.path.join(self.root_dir,  "data")
