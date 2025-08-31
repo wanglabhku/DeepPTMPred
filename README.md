@@ -37,9 +37,9 @@ Please download the required files before running the prediction.
 
 | Link                                                                                                          | Path                |
 | ------------------------------------------------------------------------------------------------------------- | ------------------- |
-| [ptm_data.csv](https://drive.google.com/file/d/1sBSODTVUOm3Q7wa05fFmupYiQs072nKX/view?usp=drive_link)         | deepPTMpred/data    |
-| [ptm_data_esm_features.npy](https://drive.google.com/file/d/1wJgUQ861iqM3CXJJoQb6AT_jWT-2Dedi/view?usp=drive_link) | deepPTMpred/pred    |
-| [esm model](https://drive.google.com/drive/folders/1KYbfh3PGRhd_s0wn-8tZcbX_uvo1xdNm?usp=drive_link)   | deepPTMpred         |
+| [ptm_data.csv](https://drive.google.com/file/d/1sBSODTVUOm3Q7wa05fFmupYiQs072nKX/view?usp=drive_link)         | DeepPTMPred/data    |
+| [ptm_data_esm_features.npy](https://drive.google.com/file/d/1wJgUQ861iqM3CXJJoQb6AT_jWT-2Dedi/view?usp=drive_link) | DeepPTMPred/pred    |
+| [esm model](https://drive.google.com/drive/folders/1KYbfh3PGRhd_s0wn-8tZcbX_uvo1xdNm?usp=drive_link)   | DeepPTMPred         |
 
 
 ***
@@ -84,7 +84,7 @@ Please download the required files before running the prediction.
 
 ### Predict
 
-1. Download the ESM model checkpoint files from [esm model](https://drive.google.com/drive/folders/1KYbfh3PGRhd_s0wn-8tZcbX_uvo1xdNm?usp=drive_link) and place in the /deepPTMpred directory .
+1. Download the ESM model checkpoint files from [esm model](https://drive.google.com/drive/folders/1KYbfh3PGRhd_s0wn-8tZcbX_uvo1xdNm?usp=drive_link) and place in the /DeepPTMPred directory .
 
 2. Data Preparation:
 
@@ -97,7 +97,7 @@ Please download the required files before running the prediction.
 
    b. Structual Features:
    
-   Download the corresponding PDB files from AlphaFold DB and place them in deepPTMpred/data directory
+   Download the corresponding PDB files from AlphaFold DB and place them in DeepPTMPred/data directory
 
 
 4. Update Configuration
@@ -118,7 +118,7 @@ Before running the prediction, you need to configure the following key parameter
       Make sure use the model corresponds to the selected ptm_type.
      
       ```shell
-      Example: model_path = "./deepPTMpred/pred/train_PTM/model/models_phosphorylation_esm2/ptm_data_210_39_64_best_model.h5"
+      Example: model_path = "./DeepPTMPred/pred/train_PTM/model/models_phosphorylation_esm2/ptm_data_210_39_64_best_model.h5"
       ``` 
     
    - pdb_path:
@@ -128,7 +128,7 @@ Before running the prediction, you need to configure the following key parameter
       Supported formats: AlphaFold-style PDB files (e.g., AF-P31749-F1-model_v4.pdb).
      
       ```shell
-      Example: pdb_path = "./deepPTMpred/data/AF-P31749-F1-model_v4.pdb"
+      Example: pdb_path = "./DeepPTMPred/data/AF-P31749-F1-model_v4.pdb"
       ``` 
 
 
@@ -139,6 +139,7 @@ Before running the prediction, you need to configure the following key parameter
    ```
    python predict.py 
    ```
+
 
 
 
