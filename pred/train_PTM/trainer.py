@@ -17,6 +17,7 @@ from tensorflow.keras.callbacks import (
     LearningRateScheduler, EarlyStopping,
     ModelCheckpoint, CSVLogger, TensorBoard
 )
+from imblearn.over_sampling import SMOTE
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras import backend as K
 from tensorflow_addons.optimizers import AdamW
