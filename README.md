@@ -74,9 +74,9 @@ Please download the required files before running the prediction.
 ***
 ### Demo
   Since prediction requires the incorporation of structural information, PyRosetta needs to be downloaded separately. Below is the download code from the PyRosetta official website.
+  
      ```python
      pip install pyrosetta-installer 
-
      python -c 'import pyrosetta_installer; pyrosetta_installer.install_pyrosetta()'
      ```
 
@@ -144,6 +144,7 @@ Before running the prediction, you need to configure the following key parameter
    ```
    python predict.py 
    ```
+
 
 
 
