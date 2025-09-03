@@ -65,10 +65,8 @@ class PTMDataLoader:
             features = np.load(self.config.esm_feature_path)
             meta = np.load(self.config.esm_meta_path, allow_pickle=True)
             
-            print(f"\n=== ESM特征统计 ===")
-            print(f"总特征数: {len(features)}")
+
             valid_features = np.any(features != 0, axis=1).sum()
-            print(f"有效特征数: {valid_features} ({valid_features/len(features):.1%})")
             
             esm_dict = {}
             for i, (protein_id, pos, is_valid) in enumerate(zip(
