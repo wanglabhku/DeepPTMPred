@@ -588,7 +588,7 @@ if __name__ == "__main__":
     print(f"总S/T位点数: {len(results_df)}")
     print(f"\n完整结果已保存至: {output_path}")
     
-    sites_of_interest = [202, 205, 231, 262, 356]  # 关注的位点预测概率显示
+    sites_of_interest = [129,308,473]  # 关注的位点预测概率显示
     print("\n=== 关注的位点预测概率 ===")
     for pos in sites_of_interest:
         site_data = results_df[results_df['position'] == pos]
