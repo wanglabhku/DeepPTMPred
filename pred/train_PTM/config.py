@@ -55,8 +55,8 @@ class Config:
         # 训练参数 
         self.batch_size  = 64 
         self.initial_learning_rate  = 0.0005 
-        self.epochs  =292
-        self.patience  =10
+        self.epochs  =200
+        self.patience  =30
         self.warmup_epochs  = 5 
         
         # 数据参数 
