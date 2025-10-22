@@ -90,18 +90,12 @@ Please download the required files before running the prediction.
 ***
 ### Jupyter Notebook
  
-   We have also prepared a Jupyter Notebook for interactively predicting post-translational modification (PTM) sites, allowing users to explore the model's capabilities in a more hands-on and intuitive way.
+   We have also prepared a Jupyter Notebook for interactively predicting post-translational modification (PTM) sites, allowing users to explore the model's capabilities in a more hands-on and intuitive way. Check predict.ipynb for more detail.
   
    ```shell
    predict.ipynb
    ```  
      
-
-1. Get predictions for the tau protein:
-
-   ```python
-   python case.py
-   ```
 ***
 
 ### Predict
@@ -160,6 +154,7 @@ Before running the prediction, you need to configure the following key parameter
    ```
    python predict.py 
    ```
+
 
 
 
