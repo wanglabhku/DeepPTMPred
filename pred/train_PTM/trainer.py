@@ -34,8 +34,24 @@ class PTMTrainer:
         self.model = None
         
     def focal_loss(self, y_true, y_pred):
-        fl = SigmoidFocalCrossEntropy(alpha=0.25, gamma=2.0)
-        return fl(y_true, y_pred)
+        
+        y_true_labels = K.argmax(y_true, axis=-1)
+        N = K.cast(K.shape(y_true)[0], dtype='float32')  
+        N_pos = K.cast(K.sum(y_true_labels), dtype='float32')  
+        N_neg = N - N_pos  
+        
+        w_pos = N / (2.0 * N_pos + K.epsilon()) 
+        w_neg = N / (2.0 * N_neg + K.epsilon()) 
+        
+        # 为每个样本分配权重
+        weights = w_pos * y_true_labels + w_neg * (1 - y_true_labels)
+        # 计算二元交叉熵
+        bce = K.binary_crossentropy(y_true, y_pred)
+        
+        # 应用权重
+        weighted_bce = weights * bce
+        
+        return K.mean(weighted_bce)
     
     def lr_scheduler(self, epoch, lr):
         if epoch < self.config.warmup_epochs:
