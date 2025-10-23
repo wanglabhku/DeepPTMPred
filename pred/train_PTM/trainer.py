@@ -233,8 +233,6 @@ class PTMTrainer:
         print(f"类别分布 - 阴性类(0): {class_counts[0]}, 阳性类(1): {class_counts[1]}")
         
         # 动态设置采样策略
-        # 如果阳性类样本数 < 2000，则设置目标为2000
-        # 否则保持原始样本数（即不进行过采样）
         target_samples = min(2000, class_counts[1])
         sampling_strategy = {1: target_samples} if class_counts[1] < 2000 else None
         
